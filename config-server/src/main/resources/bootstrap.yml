@@ -1,0 +1,83 @@
+---
+server:
+  port: 7777
+spring:
+  profiles: dev
+  application:
+    name: butterfly-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pqqanqing/butterfly-config/
+          search-paths: config-repo
+          username: pqqanqing
+          password: pqqanqing1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+
+security:
+  user:
+    password: pqqanqing
+    name: pqq
+
+encrypt:
+  key: dasdasdioekdasdas
+
+---
+server:
+  port: 7777
+spring:
+  profiles: test
+  application:
+    name: butterfly-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pqqanqing/butterfly-config/
+          search-paths: config-repo
+          username: pqqanqing
+          password: pqqanqing1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:18761/eureka/,http://localhost:18762/eureka/
+
+security:
+  user:
+    password: pqqanqing
+    name: pqq
+
+encrypt:
+  key: dasdasdioekdasdas
+
+---
+server:
+  port: 7777
+spring:
+  profiles: prod
+  application:
+    name: butterfly-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pqqanqing/butterfly-config/
+          search-paths: config-repo
+          username: pqqanqing
+          password: pqqanqing1
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:28761/eureka/,http://localhost:28762/eureka/
+
+security:
+  user:
+    password: pqqanqing
+    name: pqq
+
+encrypt:
+  key: dasdasdioekdasdas
